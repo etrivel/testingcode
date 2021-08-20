@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    tr.highlight td{background: #B0C4DE}
+  </style>
+</head>
+<body>
+  <table border=1 id="testTable">
+    <thead>
+        <tr>
+            <td>Column 1</td>
+            <td>Column 2</td>
+            <td>Column 3</td>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>            
+    </table>
+    <input type="submit" id="add" value="Add"/>
+    
+    <script>
+    
+      $(function(){
+        $("#add").off().on('click',function(){
+            console.log("Add clicked");
+            $('<tr>').append(
+                $('<td>').text('Val1'),
+                $('<td>').text('Val2'),
+                $('<td>').text('Val3')
+                ).appendTo('#testTable');
+            highlight('testTable');
+        });
+        function highlight(tableid){
+            var row = tableid+" tbody tr";
+            $("#"+row).off().on('mouseover mouseout', (function(){
+                $(this).toggleClass("highlight");
+            }
+                                                ))}                                             
+    
+    });
+    </script>
+   
+</body>
+</html>

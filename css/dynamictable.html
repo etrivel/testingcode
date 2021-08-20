@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+    <link rel="stylesheet" href="../angular/style1.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+</head>
+<body>
+    <center>
+        <table border="5" >
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <td>
+                    <input type="text" name="fname" id="fname">
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <th>Dob</th>
+                    <td>
+                        <input type="text" name="dob" id="dob">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>
+                        <input type="text" name="email" id="email">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td>
+                        <input type="password" name="pwd" id="pwd">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Contact No</th>
+                    <td>
+                        <input type="text" name="contact" id="contact">
+                    </td>
+                </tr>
+                <tr id="btna">
+                    <td colspan="2" ><input type="button" name="button" id="btn" value="Add"
+                        onclick="san()"></td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="6" id="show">
+                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Dob</th>
+                                    <th>Email</th>
+                                    <th>password</th>
+                                    <th>Contact No</th>
+                                   
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Jill</td>
+                                    <td>2000-45-75</td>
+                                    <td>asxscd@</td>
+                                    <td>asxscd@</td>
+                                    <td>78541236695</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Eve</td>
+                                    <td>2000-45-78</td>
+                                    <td>asxscd@</td>
+                                    <td>asxscd@</td>
+                                    <td>741258963220</td>
+                                  </tr>
+                                  <tr>
+                                    <td>John</td>
+                                    <td>2000-45-75</td>
+                                    <td>asxscd@</td>
+                                    <td>asxscd@</td>
+                                    <td>78966422550/td>
+                                  </tr>
+                                  <tr><td>vetri</td>
+                                  <td>2000-45-75</td><td>asxscd@</td>
+                                  <td>asxscd@</td>
+                                  <td>74125896330</td></tr>
+                         
+                         </tbody>
+                            
+                        </table>
+                  
+                    
+                   
+                </tr>
+            </thead>
+         
+            
+        
+    </center>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.validate.js"></script>
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+   
+        <script>
+       var list1 = [];
+       var list2=[];
+       var list3=[];
+       var list4=[];
+       var list5=[];
+
+
+
+       var n=1;
+       var x=0;
+       function san(){
+           var addrow= document.getElementById("show");
+           var NewRow=addrow.insertRow(n);
+
+
+           list1[x]=document.getElementById("fname").value;
+           list2[x]=document.getElementById("dob").value;
+           list3[x]=document.getElementById("email").value;
+           list4[x]=document.getElementById("pwd").value;
+           list5[x]=document.getElementById("contact").value;
+           
+           var cel1=NewRow.insertCell(0);
+           var cel2=NewRow.insertCell(1);
+           var cel3=NewRow.insertCell(2);
+           var cel4=NewRow.insertCell(3);
+           var cel5=NewRow.insertCell(4);
+
+
+           cel1.innerHTML=list1[x];
+
+           cel2.innerHTML=list2[x];
+
+           cel3.innerHTML=list3[x];
+
+           cel4.innerHTML=list4[x];
+
+           cel5.innerHTML=list5[x];
+           n++;
+           x++;
+       
+
+       }
+       
+   </script>
+    <script>
+        $(function(){
+        $("#show").dataTable();
+    })
+    </script>
+</body>
+</html>

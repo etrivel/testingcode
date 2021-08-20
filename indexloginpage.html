@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+    
+</head>
+<body>
+    <nav class="nav navbar-inverse ">
+        <div class="container-fluid ">
+          <div class="navbar-header ">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Dummy website</a>
+          </div>
+          <div class="collapse navbar-collapse "id="myNavbar">
+            <ul class="nav navbar-nav ">
+              <li class=""><a href="#">Home</a></li>
+              <li class="navar-pills"><a href="#">About</a></li>
+            
+              </ul>
+          
+            <ul class="nav navbar-nav navbar-right ">
+              <li><a href="formvalidation.html"><i
+                class="glyphicon glyphicon-user"></i> Sign Up</a></li>
+           
+              <li><a href="index1.html"><i
+                class="glyphicon glyphicon-log-in"></i> Login</a></li>
+              
+              
+            </ul>
+            </div>
+          </div>
+        </div>
+      </nav> <br>
+      <center>
+      <div  class="container" style="margin-top:70px" >
+          <div class="row">
+              <div class="col-md-12">
+                  <h4 class="glyphicon glyphicon-user"> user login </h4>
+              </div>
+              <div class="col-md-6">
+                  <form action="">
+                      <div class="form-group">
+                          <label for="email"class="control-label">Email</label>
+                          <input type="email" id="email" name="email" class="form-control"
+                          placeholder="enter email">
+                          <label for="password" class="control-label">Password</label>
+                          <input type="password" id="password" name="password" class="form-control"
+                          placeholder="enter password">
+                      </div>
+                      <div >
+                          <label><input type="checkbox" style="word-wrap:50px;"> Remember Me</label>
+                      </div>
+                      <a href="js/jquery-3.5.1.min.js">
+                        <button id="login" class="btn btn-success">Login </button></a>
+                  </form>
+              </div>
+          </div>
+      </div>
+      </center>
+          <!--table-->
+    <div id="table" class="table-responsive" class="tab-pane fade">
+        <table class="table table-striped table-condensed
+        table-hover table-bordered">
+            
+            <tr>  <th>Name</th>
+            <th>Dob</th>
+            <th>email id</th>
+            <th>password</th>
+            <th>contact no</th>
+            <th>update</th>
+            </tr>
+            <tr>
+              <td>Jill</td>
+              <td>2000-45-75</td>
+              <td>asxscd@</td>
+              <td>asxscd@</td>
+              <td>78541236695</td><td><a href="dynamictable.html" target="_blank "type="button" class="btn btn-success
+            btn-striped " 
+            >update</a></td></tr>
+         <tr> <td>Eve</td>
+          <td>2000-45-78</td>
+          <td>asxscd@</td>
+          <td>asxscd@</td>
+          <td>741258963220</td>
+        <td><span data-target="dynamictable.html" type="button"class="btn btn-success"id="update2" >update</a></td></tr> 
+        <tr><td>John</td>
+          <td>2000-45-75</td>
+          <td>asxscd@</td>
+          <td>asxscd@</td>
+          <td>78966422550/td>
+    <td><a href="dynamictable.html" type="button" class="btn btn-success">update</a></td></tr>
+    <tr><td>vetri</td>
+      <td>2000-45-75</td><td>asxscd@</td>
+      <td>asxscd@</td>
+      <td>74125896330</td>
+      <td><a href="dynamictable.html" type="button" class="btn btn-success">update</a></td></tr>
+    </table>
+      <!--submit-->
+      <div id="submit">
+    <a href="#"><input type="submit" class="btn btn-danger" value="submit"></a>
+        </div>
+        </div>
+        <!--update-->
+       
+             
+         
+ <!--script-->
+    
+    <script src="js/jquery.min.js"></script>
+ 
+    <script>
+      $("document").ready(function(){
+         $("#submit").click(function(){
+           alert("sumbit")
+         });
+      });
+      $("document").ready(function(){
+         $("#update2").click(function(){
+           var x=$(this).attr('#table')
+      $(this).attr('#table','#update')         });
+      });
+      $("document").ready(function(){
+         $("#table").css('color','red');
+        
+        
+      });
+     
+      
+    </script>
+       
+ 
+    
+    
+    
+</body>
+
+
+</html>

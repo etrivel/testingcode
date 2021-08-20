@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   
+    <h1>Form Validation</h1>
+    <div id="reg">
+       
+        <form id="frm">
+       <label>Name</label><br>
+       <input type="text" name="name" id="name" 
+       placeholder="enter full name"><br><br>
+       <label>DOB</label><br>
+       <input type="" name="dob" id="dob" 
+       placeholder="enter date of birth"><br><br>
+       <label>Email</label><br>
+       <input type="email" name="email" id="email" 
+       placeholder="enter your email"><br><br>
+       <label >Password</label><br>
+       <input type="password" name="password" id="pass" 
+       placeholder="enter your password"><br><br>
+       <label>Contact No</label><br>
+       <input type="numbers" name="contact" id="contact" 
+       placeholder="enter your contact number"><br><br>
+     <button type="submit" name="submit" id="submit">
+         Register Now
+     </button>
+       </form>
+       
+    </div>
+<!--jquery script-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <!--code-->
+    <script>
+    
+        $(document).ready(function(){
+            $.validator.setDefaults({
+                submitHandler:function(){
+                    alert("submitted");
+                }
+            });
+            $("#frm").validate({
+                  rules:{
+                      name:"required",
+                      dob:{
+                          required:true,
+                          date:true
+                        },
+                        email:{
+                            required:true,
+                            email:true
+                        },
+                        password:{
+                            required:true,
+                            minlength:5
+                        },
+                        contact:{
+                            required:true,
+                            digits:true,
+                            minlength:10,
+                            maxlength:10
+                        }
+                  },
+                  messages:{
+                      name:"please enter your name",
+                      dob:{
+                          required:"please enter dob",
+                          date:"correct date format"
+                      },
+                      email:{
+                          required:"please enter your email",
+                          email:"corerect format"
+                      },
+                      password:{
+                        required:"please enter your password",
+                        minlength:"password must be 5"
+                      },
+                      contact:{
+                          required:"please enter you number",
+                          digits:"must be numeric",
+                          minlength:"must be 10",
+                          maxlength:"must be 10"
+                      }
+
+                  }
+                  
+            });
+        });
+    </script>
+</body>
+</html>
